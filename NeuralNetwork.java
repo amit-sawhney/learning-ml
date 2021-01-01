@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 
 public class NeuralNetwork {
     private Matrix inputHiddenWeights, hiddenOutputWeights, hiddenBias, outputBias;
@@ -37,7 +36,7 @@ public class NeuralNetwork {
         output.add(outputBias);
         output.sigmoid();
 
-        return output.toArrayList();
+        return output.toArray();
     }
 
     /**

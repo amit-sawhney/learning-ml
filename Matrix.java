@@ -12,15 +12,6 @@ public class Matrix {
     private int rows, cols;
 
     /**
-     * Getter method for data.
-     * 
-     * @return data. The Matrix DS
-     */
-    public double[][] getData() {
-        return data;
-    }
-
-    /**
      * Constructor that instantiates the 2D array to small random numbers. - This is
      * an expectation of the stochastic optimization algorithm which trains our
      * models (stochastic optimization) -
@@ -103,11 +94,11 @@ public class Matrix {
      * @return the transpose of the original Matrix
      */
     public static Matrix transpose(Matrix orig) {
-        Matrix transpose = new Matrix(orig.rows, orig.cols);
+        Matrix transpose = new Matrix(orig.cols, orig.rows);
 
         for (int i = 0; i < orig.rows; ++i) {
             for (int j = 0; j < orig.cols; ++j) {
-                transpose.data[i][j] = orig.data[j][i];
+                transpose.data[j][i] = orig.data[i][j];
             }
         }
 
@@ -196,8 +187,7 @@ public class Matrix {
         Matrix transormedMatrix = new Matrix(rows, cols);
         for (int i = 0; i < rows; ++i) {
             for (int j = 0; j < cols; ++j) {
-                double sX = sigmoidFunction(this.data[i][j]);
-                this.data[i][j] = sX * (1 - sX);
+                transormedMatrix.data[i][j] = this.data[i][j] * (1 - this.data[i][j]);
             }
         }
         return transormedMatrix;
@@ -223,7 +213,7 @@ public class Matrix {
      * 
      * @return the ArrayList version of the Matrix
      */
-    public List<Double> toArrayList() {
+    public List<Double> toArray() {
         List<Double> transformDoubles = new ArrayList<Double>();
 
         for (int i = 0; i < rows; ++i) {
