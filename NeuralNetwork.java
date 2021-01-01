@@ -85,9 +85,11 @@ public class NeuralNetwork {
 
     /**
      * Fits the neural network to a dataset
+     * 
      * @param trainPredictionSamples the dependent variables in the training set
-     * @param trainResultSamples the independent outputs in the training set
-     * @param epochs the number of times for the model to see the data
+     * @param trainResultSamples     the independent outputs in the training set
+     * @param epochs                 the number of times for the model to see the
+     *                               data
      */
     public void fit(double[][] trainPredictionSamples, double[][] trainResultSamples, int epochs) {
         for (int i = 0; i < epochs; ++i) {

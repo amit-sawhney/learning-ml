@@ -26,10 +26,11 @@ public class Driver {
 
         int correct = 0;
         for (int i = 0; i < Y.length; i++) {
-            if (results.get(i) == Y[i][0]) correct++;
+            if (results.get(i) == Y[i][0])
+                correct++;
         }
 
-        System.out.println(correct / (1.0* results.size()) * 100 + "% accuracy");
+        System.out.println(correct / (1.0 * results.size()) * 100 + "% accuracy");
 
     }
 }
